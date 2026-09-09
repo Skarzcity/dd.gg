@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* dd.gg brand — void + amber signal, not GMGN green clone */
+:root {
+  --void: #07080c;
+  --panel: #0e1018;
+  --line: rgba(255, 255, 255, 0.08);
+  --ink: #f2f0ea;
+  --ink-muted: #9a968a;
+  --ink-faint: #5c594f;
+  --amber: #f5b400;
+  --amber-bright: #ffd24a;
+  --cyan: #2dd4bf;
+  --up: #3ddc97;
+  --down: #ff5c7a;
+}
+
+@theme inline {
+  --color-void: var(--void);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-amber: var(--amber);
+  --color-amber-bright: var(--amber-bright);
+  --color-cyan: var(--cyan);
+  --color-signal-up: var(--up);
+  --color-signal-down: var(--down);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --shadow-glow: 0 0 40px rgba(245, 180, 0, 0.12);
+  --shadow-panel: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--void);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-body), system-ui, sans-serif;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+.select {
+  appearance: none;
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background: var(--void);
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--ink);
+  outline: none;
+}
+
+.select:focus {
+  border-color: rgba(245, 180, 0, 0.5);
+  box-shadow: 0 0 0 2px rgba(245, 180, 0, 0.25);
+}
+
+/* scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 180, 0, 0.35) transparent;
+}
+
+::selection {
+  background: rgba(245, 180, 0, 0.35);
+  color: var(--ink);
+}
